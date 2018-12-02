@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'global.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'StoreDetails.dart';
 
 Future<List<Store>> fetchPost() async {
   final response =
@@ -57,8 +58,15 @@ class StoreListState extends State<StoreList> {
                 itemCount: listNum,
                 itemBuilder: (context, index) {
                   return new Container (
+                    child: new GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => StoreDetails(ste: snapshot.data[index], length: snapshot.data.length,)),
+                        );
+                      },
                       child: new Card (
-                        color: Colors.greenAccent,
+                        color: Colors.blue,
                         child: Column(
                             mainAxisSize: MainAxisSize.min,
 
@@ -67,9 +75,9 @@ class StoreListState extends State<StoreList> {
 
                               new Text ((snapshot.data[index].name),
                                 style: new TextStyle (fontWeight: FontWeight.bold),),
-                              new Text (snapshot.data[index].time),
+                              new Text (snapshot.data[index].type),
                               new Text (snapshot.data[index].price),
-                              new Text ("300 feet"),
+                              new Text (snapshot.data[index].location),
                               /*FlatButton(
                                   color: Colors.blue,
                                   child: new Text ("Go"),
@@ -82,6 +90,7 @@ class StoreListState extends State<StoreList> {
                             ]
 
                         ),
+                      )
                       ), alignment: Alignment.center);
                 }
             );

@@ -8,13 +8,16 @@ int listNum = 0;
 
 class Store {
   String name;
-  String time;
+  String type;
   String price;
-  String distance;
+  String location;
+  String id;
+  List<dynamic> menu;
+  List<dynamic> prices;
 
 
 
-  Store({this.name, this.time, this.price, this.distance});
+  Store({this.name, this.type, this.price, this.location, this.id, this.menu, this.prices});
 
   factory Store.fromJson(Map<String, dynamic> json) {
     int len = json['length'];
@@ -23,9 +26,12 @@ class Store {
     for(int i = 0; i<len; i++){
       list.add(Store(
           name: json[i.toString()]['name'],
-      time: json[i.toString()]['time'],
+      type: json[i.toString()]['type'],
       price: json[i.toString()]['price'],
-      distance: json[i.toString()]['distance']
+      location: json[i.toString()]['location'],
+          id: json[i.toString()]['id'],
+        menu: json[i.toString()]['menu'],
+          prices: json[i.toString()]['prices']
       ));
 
       }
