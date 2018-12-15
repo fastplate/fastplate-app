@@ -1,6 +1,6 @@
 # fastplate
 
-A new Flutter project.
+Dining delivery, reimagined for the campus.
 
 ## Getting Started
 
