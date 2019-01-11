@@ -44,15 +44,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  String name = "Michael Ranter";
-  String phoneNum = "444-444-4444";
+  String name = "JAQUON HART";
+  String phoneNum = "111-111-1111";
   String diningLocation = "Au Bon Pain";
   String diningDelivery = "Hamerschlag House" ;
   String price = "\$3.50";
   String distPickup = "0.3 MI";
   String distDelivery = "0.3 MI";
-  String arriveBy = "2:24 P.M.";
+  String arriveBy = "2:24 P.M." ;
 
   Color getCol (int index) {
     // This implementation doesn't actually work, we need to program the backend logic for this function
@@ -80,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text("Order Status"),
+          title: Text("Order Confirmation"),
         ),
         body: new Container(
             padding: new EdgeInsets.all (20.0),
@@ -100,124 +99,124 @@ class _MyHomePageState extends State<MyHomePage> {
 
                       Center (
                           child: new Text (
-                              'placing an order!', style: new TextStyle (fontSize: 32.0, fontWeight: FontWeight.bold)
+                              'confirming the order!', style: new TextStyle (fontSize: 32.0, fontWeight: FontWeight.bold)
                           )
 
                       ),
 
                       Center (
-                          child: Container (
-                              padding: new EdgeInsets.only(top: 50.0, bottom: 30.0),
-                              child: Column (
+                        child: Container (
+                            padding: new EdgeInsets.only(top: 50.0, bottom: 20.0),
+                      child: Column (
 
-                                  children: [
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Courier: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              name, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
+                        children: [
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                            child: Row (children: [
+                          Text (
+                            "Customer: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                          ),
+                          Text (
+                          name, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                        )])),
 
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Contact Details: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              phoneNum, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                              child: Row (children: [
+                                Text (
+                                    "Contact Details: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                ),
+                                Text (
+                                    phoneNum, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                )])),
 
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Pickup: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              diningLocation, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                              child: Row (children: [
+                                Text (
+                                    "Pickup: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                ),
+                                Text (
+                                    diningLocation, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                )])),
 
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Destination: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              diningDelivery, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                              child: Row (children: [
+                                Text (
+                                    "Destination: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                ),
+                                Text (
+                                    diningDelivery, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                )])),
 
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Price: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              price, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          ),])),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                              child: Row (children: [
+                                Text (
+                                    "Price: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                ),
+                                Text (
+                                    price, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                ),])),
 
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Distance to Pickup Location: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              distPickup, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                                    child: Row (children: [
+                                      Text (
+                                          "Distance to Pickup Location: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                      ),
+                                      Text (
+                                          distPickup, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                      )])),
 
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Distance to Delivery Location: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              distDelivery, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
-                                    Container (
-                                        padding: new EdgeInsets.only(bottom: 20.0),
-                                        child: Row (children: [
-                                          Text (
-                                              "Arrival by: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
-                                          ),
-                                          Text (
-                                              arriveBy, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
-                                          )])),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                              child: Row (children: [
+                               Text (
+                               "Distance to Delivery Location: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                ),
+                                Text (
+                                 distDelivery, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                )])),
 
-                                  ]))),
+                          Container (
+                              padding: new EdgeInsets.only(bottom: 20.0),
+                              child: Row (children: [
+                                Text (
+                                    "Arrival by: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                ),
+                                Text (
+                                    arriveBy, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                )])),
+                        ]))),
 
 
                       Center (
-                          child: Container (
-                              padding: new EdgeInsets.only(bottom: 30.0),
-                              child: Row (children: [
-                                Card (
-                                    color: getCol(1) ,
-                                    child: Text ("Order Received", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
+                        child: Container (
+                            padding: new EdgeInsets.only(bottom: 30.0),
+                        child: Row (children: [
+                          Card (
+                            color: getCol(1) ,
+                            child: Text ("Order Received", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
 
-                                ),
+                        ),
 
-                                Card (
-                                    color: getCol (2) ,
-                                    child: Text ("Picked Up", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
+                          Card (
+                            color: getCol (2) ,
+                              child: Text ("Picked Up", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
 
-                                ),
+                          ),
 
-                                Card (
-                                    color: getCol (3),
-                                    child: Text ("Delivered", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
+                          Card (
+                              color: getCol (3),
+                              child: Text ("Delivered", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
 
-                                ),
+                          ),
 
 
 
-                              ]))
+                        ]))
                       ),
 
 
@@ -227,17 +226,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Center (
                           child: FlatButton (
 
-                              child: Card (
-                                  color: Colors.red,
-                                  child: new Text (
-                                      "Cancel Order", style: new TextStyle (fontSize: 30.0, fontWeight: FontWeight.bold)
-                                  )
-                              ),
+                        child: Card (
+                            color: Colors.red,
+                          child: new Text (
+                            "Cancel Order", style: new TextStyle (fontSize: 30.0, fontWeight: FontWeight.bold)
+                          )
+                        ),
 
-                              onPressed: () {
+                          onPressed: () {
 
-                              }
-                          )),
+                          }
+                      )),
 
 
-                    ]))));}}
+]))));}}
