@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Active Courier'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -45,130 +45,30 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  int _chosen = -1;
-  List <String> names1 = ["JELANEE UWAEZUOKE", "HU MY", "JAQUON HART", "PETER TAYLOR", "MICHAEL ROBINSON", "STEPHANIE TURNER",
-  "ENRIQUE VERA" ];
-  List <String> locations1 = ["0.3 MI - Wean Hall - iNoodle", "0.4 MI - Gates Computing - Taste of India",
-   "0.6 MI - Hamerschlag House - Au Bon Pain", "0.8 MI - Tepper Quad - Rothberg's Roasters ll", "1.2 MI - Mudge Dorm - Taste of India",
-  "1.0 MI - Gates Hillman Complex, 5th Floor Commons - Innovation Kitchen", "2 MI - Shirley Apartments - The Exchange"];
-  List <String> prices1 = ["\$3.20", "\$3.30", "\$3.50", "\$5.20", "\$5.60", "\$5.80", "\$6.10"];
-
-  List <String> names = ["JELANEE UWAEZUOKE", "HU MY", "JAQUON HART", "PETER TAYLOR", "MICHAEL ROBINSON", "STEPHANIE TURNER",
-  "ENRIQUE VERA" ];
-  List <String> locations = ["0.3 MI - Wean Hall - iNoodle", "0.4 MI - Gates Computing - Taste of India",
-  "0.6 MI - Hamerschlag House - Au Bon Pain", "0.8 MI - Tepper Quad - Rothberg's Roasters ll", "1.2 MI - Mudge Dorm - Taste of India",
-  "1.0 MI - Gates Hillman Complex, 5th Floor Commons - Innovation Kitchen", "2 MI - Shirley Apartments - The Exchange"];
-  List <String> prices = ["\$3.20", "\$3.30", "\$3.50", "\$5.20", "\$5.60", "\$5.80", "\$6.10"];
-
-
-
-  void _setChosen(int index) {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-
-      _chosen = index;
-      print (_chosen);
-
-    });
-
-  }
+  String name = "Michael Ranter";
+  String phoneNum = "444-444-4444";
+  String diningLocation = "Au Bon Pain";
+  String diningDelivery = "Hamerschlag House" ;
+  String price = "\$3.50";
+  String distPickup = "0.3 MI";
+  String distDelivery = "0.3 MI";
+  String arriveBy = "2:24 P.M.";
 
   Color getCol (int index) {
-    if (index == _chosen) {
-      return Colors.lightBlueAccent;
-    } else {
+    // This implementation doesn't actually work, we need to program the backend logic for this function
+    // based on geographic coordinates
+    if (index == 1) {
+      return Colors.greenAccent;
+    } if (index == 2) {
+      return Colors.greenAccent;
+    }
+    else {
       return Colors.white;
     }
 
   }
 
-  List <DropdownMenuItem<String>> _dropDownMenuItems;
-  String _statusSel;
-
-  List <DropdownMenuItem <String>> _getDropDownMenuItems() {
-    List <DropdownMenuItem <String>> items = new List () ;
-    items.add (new DropdownMenuItem (
-        value: '0.5',
-        child: new Text ("0.5 MI", style: new TextStyle (fontSize: 20.0))
-    ));
-
-    items.add (new DropdownMenuItem (
-        value: "0.75",
-        child: new Text ("0.75 MI", style: new TextStyle (fontSize: 20.0))
-    ));
-
-    items.add (new DropdownMenuItem (
-        value: "1",
-        child: new Text ("1 MI", style: new TextStyle (fontSize: 20.0))
-    ));
-
-    items.add (new DropdownMenuItem (
-        value: "5",
-        child: new Text (">1 MI", style: new TextStyle (fontSize: 20.0))
-    ));
-    return items;
-  }
-
-  void changedDropDownItem (String selectedItem) {
-    setState (() {
-      _statusSel = selectedItem;
-
-
-      names = ["JELANEE UWAEZUOKE", "HU MY", "JAQUON HART", "PETER TAYLOR", "MICHAEL ROBINSON", "STEPHANIE TURNER",
-      "ENRIQUE VERA" ];
-      locations = ["0.3 MI - Wean Hall - iNoodle", "0.4 MI - Gates Computing - Taste of India",
-      "0.6 MI - Hamerschlag House - Au Bon Pain", "0.8 MI - Tepper Quad - Rothberg's Roasters ll", "1.2 MI - Mudge Dorm - Taste of India",
-      "1.0 MI - Gates Hillman Complex, 5th Floor Commons - Innovation Kitchen", "2 MI - Shirley Apartments - The Exchange"];
-      prices = ["\$3.20", "\$3.30", "\$3.50", "\$5.20", "\$5.60", "\$5.80", "\$6.10"];
-
-
-      for ( var location in locations1) {
-        if (double.parse(location.split(" ")[0]) > double.parse(_statusSel)) {
-          if (locations.contains(location)) {
-            int index = locations.lastIndexOf(location);
-            locations.remove(location);
-            names.removeAt(index);
-            prices.removeAt(index);
-          }
-        }
-      }
-
-    });
-  }
-
-
   @override
-
-  void initState () {
-    _dropDownMenuItems = _getDropDownMenuItems() ;
-    _statusSel = _dropDownMenuItems[0].value;
-
-    super.initState();
-
-    names = ["JELANEE UWAEZUOKE", "HU MY", "JAQUON HART", "PETER TAYLOR", "MICHAEL ROBINSON", "STEPHANIE TURNER",
-    "ENRIQUE VERA" ];
-    locations = ["0.3 MI - Wean Hall - iNoodle", "0.4 MI - Gates Computing - Taste of India",
-    "0.6 MI - Hamerschlag House - Au Bon Pain", "0.8 MI - Tepper Quad - Rothberg's Roasters ll", "1.2 MI - Mudge Dorm - Taste of India",
-    "1.0 MI - Gates Hillman Complex, 5th Floor Commons - Innovation Kitchen", "2 MI - Shirley Apartments - The Exchange"];
-    prices = ["\$3.20", "\$3.30", "\$3.50", "\$5.20", "\$5.60", "\$5.80", "\$6.10"];
-
-    for ( var location in locations1) {
-      if (double.parse(location.split(" ")[0]) > double.parse(_statusSel)) {
-        if (locations.contains(location)) {
-          int index = locations.lastIndexOf(location);
-          locations.remove(location);
-          names.removeAt(index);
-          prices.removeAt(index);
-        }
-      }
-    }
-  }
-
-
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
@@ -176,13 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-
-
     return Scaffold(
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
+          title: Text("Order Status"),
         ),
         body: new Container(
             padding: new EdgeInsets.all (20.0),
@@ -192,59 +90,154 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center (
-                        child: new Container (
-                          child: new Center (
-                            child: new DropdownButton (
-                              style: new TextStyle (color: Colors.blue, fontWeight: FontWeight.bold),
-                              value : _statusSel,
-                              items: _dropDownMenuItems,
-                              onChanged: changedDropDownItem,
-                            ),),),),
+
                       Center (
                           child: new Text (
-                              '15 Recommended Orders', style: new TextStyle (fontSize: 32.0, fontWeight: FontWeight.bold)
+                              'Thank you for', style: new TextStyle (fontSize: 32.0, fontWeight: FontWeight.bold)
                           )
 
                       ),
 
+                      Center (
+                          child: new Text (
+                              'placing an order!', style: new TextStyle (fontSize: 32.0, fontWeight: FontWeight.bold)
+                          )
 
-                      Expanded ( child:
-                      ListView.builder
-                        (
-                          itemCount: names.length,
-                          itemBuilder: (BuildContext ctxt, int Index) {
-                            return new FlatButton(
-                                child: Card (
-                                  color: getCol (Index),
-                                  child: Row(
-                                    children: <Widget>[
-                                      new Container(
-                                        padding: EdgeInsets.only(left: 20),
-                                        child: new Text(
-                                          prices[Index],
-                                          style: new TextStyle(
-                                              fontSize: 28.0,
-                                              color: Colors.green, fontWeight: FontWeight.bold
+                      ),
+
+                      Center (
+                          child: Container (
+                              padding: new EdgeInsets.only(top: 50.0, bottom: 30.0),
+                              child: Column (
+
+                                  children: [
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Courier: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
                                           ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                          child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: <Widget>[
-                                                ListTile(
-                                                  title: Text(names[Index], style: TextStyle(
-                                                      fontWeight: FontWeight.bold)),
-                                                  subtitle: Text(locations[Index]),
-                                                ),
+                                          Text (
+                                              name, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
 
-                                              ]))
-                                    ],
-                                  ),),
-                                onPressed: () {
-                                  _setChosen(Index);
-                                }
-                            );
-                          }))]))));}
-}
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Contact Details: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              phoneNum, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
+
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Pickup: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              diningLocation, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
+
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Destination: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              diningDelivery, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
+
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Price: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              price, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          ),])),
+
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Distance to Pickup Location: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              distPickup, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
+
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Distance to Delivery Location: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              distDelivery, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
+                                    Container (
+                                        padding: new EdgeInsets.only(bottom: 20.0),
+                                        child: Row (children: [
+                                          Text (
+                                              "Arrival by: ", style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold)
+                                          ),
+                                          Text (
+                                              arriveBy, style: new TextStyle (fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent)
+                                          )])),
+
+                                  ]))),
+
+
+                      Center (
+                          child: Container (
+                              padding: new EdgeInsets.only(bottom: 30.0),
+                              child: Row (children: [
+                                Card (
+                                    color: getCol(1) ,
+                                    child: Text ("Order Received", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
+
+                                ),
+
+                                Card (
+                                    color: getCol (2) ,
+                                    child: Text ("Picked Up", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
+
+                                ),
+
+                                Card (
+                                    color: getCol (3),
+                                    child: Text ("Delivered", style: new TextStyle (fontSize: 20.0, fontWeight:FontWeight.bold))
+
+                                ),
+
+
+
+                              ]))
+                      ),
+
+
+
+
+
+                      Center (
+                          child: FlatButton (
+
+                              child: Card (
+                                  color: Colors.red,
+                                  child: new Text (
+                                      "Cancel Order", style: new TextStyle (fontSize: 30.0, fontWeight: FontWeight.bold)
+                                  )
+                              ),
+
+                              onPressed: () {
+
+                              }
+                          )),
+
+
+                    ]))));}}
